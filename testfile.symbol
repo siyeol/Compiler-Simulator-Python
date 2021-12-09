@@ -1,0 +1,9 @@
+*************************************************************************
+Name			Type			Scope
+*************************************************************************
+example			prog			['global', 'example']
+numOne			int 			['global', 'example']
+numTwo			int 			['global', 'example']
+temp			char			['global', 'example']
+temp			int 			['global', 'example', 'IF-THEN']
+temp			int 			['global', 'example', 'IF-ELSE']

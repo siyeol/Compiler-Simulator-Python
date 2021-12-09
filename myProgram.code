@@ -1,0 +1,1 @@
+example ( ) { int numOne ; int numTwo ; char temp ; numOne = 10 ; numTwo = 15 ; numOne = 5 ; temp = hello ; temp = bye ; IF numOne + 5 > numTwo THEN { int temp ; numOne = 100 ; temp = 30 ; } ELSE { int temp ; temp = 500 + 100 ; numTwo = 100 + 50 ; EXIT temp ; } }
