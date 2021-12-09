@@ -1,1 +1,1 @@
-example ( ) { int numOne ; int numTwo ; char temp ; numOne = 10 ; numTwo = 15 ; numOne = 5 ; temp = hello ; temp = bye ; IF numOne + 5 > numTwo THEN { int temp ; numOne = 100 ; temp = 30 ; } ELSE { int temp ; temp = 500 + 100 ; numTwo = 100 + 50 ; EXIT temp ; } }
+market ( ) { int price ; int tax ; int money ; char memo ; price = 1000 ; tax = 500 ; money = 2000 ; memo = shop ; memo = enter ; IF price + tax > money THEN { int balance ; balance = 500 ; memo = buy ; } ELSE { int balance ; balance = 2000 ; tax = 500 + 2 ; memo = kicked ; EXIT balance ; } }
