@@ -125,12 +125,14 @@ class codegenerator(parser):
             # IF-THEN-ELSE
             if tree.children[0].type[0] == 9:
                 
-                # IF cond -> expr > expr
+                # IF cond -> expr < expr
                 self.scope.append("IF")
                 condReg = self.regAlloc()
-                r1 = self.exprEval(tree.children[1].children[2], t, s)
-                r2 = self.exprEval(tree.children[1].children[0], t, s)
-
+                '''r1 = self.exprEval(tree.children[1].children[2], t, s)
+                r2 = self.exprEval(tree.children[1].children[0], t, s)'''
+                r1 = self.exprEval(tree.children[1].children[0], t, s)
+                r2 = self.exprEval(tree.children[1].children[2], t, s)
+                
                 t.write(f"LT\tReg#{condReg}, Reg#{r1}, Reg#{r2}\n")
                 t.write(f"JUMPT\tReg#{condReg}, L1\n")
                 t.write(f"JUMPF\tReg#{condReg}, L2\n")
