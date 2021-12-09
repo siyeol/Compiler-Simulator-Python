@@ -206,7 +206,8 @@ class parser(object):
 
         state_num = self.stack[0][0]
         sNum_to_stack = parsingTable[state_num][goto_num]
-        print("state num: " + str(state_num) + " goto_num: "+ str(goto_num) + " sNum_to_stack: " + str(sNum_to_stack))
+        '''print("state num: " + str(state_num) + " goto_num: "+ str(goto_num) + " sNum_to_stack: " + str(sNum_to_stack))'''
+        print( str(state_num) + "\t   " + str(goto_num) + "\t\t" + str(sNum_to_stack) )
 
         if sNum_to_stack == 0:
             self.error = True
@@ -223,6 +224,9 @@ class parser(object):
         self.accept=False
         self.reject=False
         self.error=False
+        
+        print("\nState_#\t   Goto_#\tsNUM_to_stack")
+        print("--------------------------------------------")
 
         while self.accept == False:
             '''print("stack:")
@@ -255,11 +259,12 @@ class parser(object):
             elif state_ >= 101 and state_ <= 117:
                 self.reduce(state_-100)
             
-        print("accept: "+str(self.accept))
+        print("\naccept (T/F): " + str(self.accept))
         self.parsedTree = self.nodes.top()
         '''
         (for debugging)
         print(self.parsedTree.type)
         self.parsedTree.print_child()
         '''
+
 

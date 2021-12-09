@@ -1,9 +1,10 @@
 *************************************************************************
 Name			Type			Scope
 *************************************************************************
-example			prog			['global', 'example']
-numOne			int 			['global', 'example']
-numTwo			int 			['global', 'example']
-temp			char			['global', 'example']
-temp			int 			['global', 'example', 'IF-THEN']
-temp			int 			['global', 'example', 'IF-ELSE']
+market			prog			['global', 'market']
+price			int 			['global', 'market']
+tax			int 			['global', 'market']
+money			int 			['global', 'market']
+memo			char			['global', 'market']
+balance			int 			['global', 'market', 'IF-THEN']
+balance			int 			['global', 'market', 'IF-ELSE']

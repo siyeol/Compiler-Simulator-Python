@@ -1,38 +1,39 @@
-BEGIN example
-LD	Reg#0, numOne
-LD	Reg#1, numTwo
-LD	Reg#2, temp
-LD	Reg#3, 10
-ST	Reg#3, numOne
-LD	Reg#3, 15
-ST	Reg#3, numTwo
-LD	Reg#3, 5
-ST	Reg#3, numOne
-LD	Reg#3, hello
-ST	Reg#3, temp
-LD	Reg#3, bye
-ST	Reg#3, temp
-LD	Reg#4, numTwo
-LD	Reg#5, numOne
-LD	Reg#6, 5
-ADD	Reg#5, Reg#5, Reg#6
-LT	Reg#3, Reg#4, Reg#5
-JUMPT	Reg#3, L1
-JUMPF	Reg#3, L2
-L1:
-LD	Reg#3, temp
-LD	Reg#4, 100
-ST	Reg#4, numOne
-LD	Reg#4, 30
-ST	Reg#4, temp
-L2:
-LD	Reg#3, temp
+BEGIN market
+LD	Reg#0, price
+LD	Reg#1, tax
+LD	Reg#2, money
+LD	Reg#3, memo
+LD	Reg#4, 1000
+ST	Reg#4, price
 LD	Reg#4, 500
-LD	Reg#5, 100
-ADD	Reg#4, Reg#4, Reg#5
-ST	Reg#4, temp
-LD	Reg#4, 100
-LD	Reg#7, 50
-ADD	Reg#4, Reg#4, Reg#7
-ST	Reg#4, numTwo
-END example
+ST	Reg#4, tax
+LD	Reg#4, 2000
+ST	Reg#4, money
+LD	Reg#4, shop
+ST	Reg#4, memo
+LD	Reg#4, enter
+ST	Reg#4, memo
+LD	Reg#5, money
+LD	Reg#6, price
+LD	Reg#7, tax
+ADD	Reg#6, Reg#6, Reg#7
+LT	Reg#4, Reg#5, Reg#6
+JUMPT	Reg#4, L1
+JUMPF	Reg#4, L2
+L1:
+LD	Reg#4, balance
+LD	Reg#5, 500
+ST	Reg#5, balance
+LD	Reg#5, buy
+ST	Reg#5, memo
+L2:
+LD	Reg#4, balance
+LD	Reg#5, 2000
+ST	Reg#5, balance
+LD	Reg#5, 500
+LD	Reg#6, 2
+ADD	Reg#5, Reg#5, Reg#6
+ST	Reg#5, tax
+LD	Reg#5, kicked
+ST	Reg#5, memo
+END market

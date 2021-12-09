@@ -7,13 +7,13 @@ import sys
 
 inputFile = sys.argv[1]
 srcFile = open(inputFile, "r")
-btw = ""
-line = srcFile.readline()
-while line:
-    btw += line
-    line = srcFile.readline()
-btw = btw.strip().split(" ")
-tokens = scanner().tokenizing(btw)
+scan_bus = ""
+read_buffer = srcFile.readline()
+while read_buffer:
+    scan_bus += read_buffer
+    read_buffer = srcFile.readline()
+scan_bus = scan_bus.strip().split(" ")
+tokens = scanner().tokenizing(scan_bus)
 
 
 
