@@ -1,1 +1,25 @@
-market ( ) { int price ; int tax ; int money ; char memo ; price = 1000 ; tax = 500 ; money = 2000 ; memo = shop ; memo = enter ; IF price + tax < money THEN { int balance ; balance = 500 ; memo = buy ; } ELSE { int balance ; balance = 2000 ; tax = 500 + 2 ; memo = kicked ; EXIT balance ; } }
+market ( ) {
+    int price ; 
+    int tax ; 
+    int money ; 
+    char memo ; 
+    price = 1000 ;
+    tax = 500 ; 
+    money = 2000 ; 
+    memo = shop ; 
+    memo = enter ; 
+
+    IF price + tax < money 
+    THEN { 
+        int balance ; 
+        balance = 500 ; 
+        memo = buy ; 
+        } 
+    ELSE {
+        int balance ; 
+        balance = 2000 ; 
+        tax = 500 + 2 ; 
+        memo = kicked ; 
+        EXIT balance ; 
+        } 
+    }

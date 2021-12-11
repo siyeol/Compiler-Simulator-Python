@@ -51,25 +51,6 @@ class codegenerator(parser):
             print("\nError: Parser rejected the input string")
             quit()
         self.targetCode(self.parsedTree, t, s)
-  
-    # evaluates expression and returns the result register #
-    def exprEval(self, exprNode, t, s):
-        
-        # expr -> fact
-        if exprNode.children[0].type[0] == 26:
-            # fact -> num | word
-            newReg = self.regAlloc()
-            t.write(f"LD\tReg#{newReg}, {exprNode.children[0].children[0].type[1]}\n")
-            return newReg
-        
-        # expr -> expr + fact
-        else:
-
-            tReg = self.exprEval(exprNode.children[0], t, s)
-            fReg = self.regAlloc()
-            t.write(f"LD\tReg#{fReg}, {exprNode.children[2].children[0].type[1]}\n")
-            t.write(f"ADD\tReg#{tReg}, Reg#{tReg}, Reg#{fReg}\n")
-            return tReg
 
     def targetCode(self, tree, t, s):
 
@@ -175,3 +156,22 @@ class codegenerator(parser):
                     if tuple(self.scope) in self.symbolTable[key].keys():
                         self.regFree(self.symbolTable[key][tuple(self.scope)]["register"])
                 self.scope.pop()
+
+    # evaluates expression and returns the result register #
+    def exprEval(self, exprNode, t, s):
+        
+        # expr -> fact
+        if exprNode.children[0].type[0] == 26:
+            # fact -> num | word
+            newReg = self.regAlloc()
+            t.write(f"LD\tReg#{newReg}, {exprNode.children[0].children[0].type[1]}\n")
+            return newReg
+        
+        # expr -> expr + fact
+        else:
+
+            tReg = self.exprEval(exprNode.children[0], t, s)
+            fReg = self.regAlloc()
+            t.write(f"LD\tReg#{fReg}, {exprNode.children[2].children[0].type[1]}\n")
+            t.write(f"ADD\tReg#{tReg}, Reg#{tReg}, Reg#{fReg}\n")
+            return tReg
